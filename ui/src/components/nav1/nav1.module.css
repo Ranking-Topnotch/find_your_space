@@ -1,0 +1,129 @@
+.nav1_con{
+    background-color: #26688b;
+    padding: 1em 10em;
+}
+
+.sect_two_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #394041;
+    padding: 1em;
+    border-radius: 20px;
+    margin-top: 1em;
+}
+
+.sect_two_form > div:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 70%
+}
+
+.sect_two_form > div:nth-child(1) select{
+    width: 25%;
+    margin-right: 0.4em;
+    height: 4em;
+    padding-left: 1.5em;
+    padding-right: 1em;
+    background-color: #FFFFFF;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.sect_two_form > div:nth-child(2) {
+    display: flex;
+    width: 12em;
+}
+
+.sect_two_form > div:nth-child(2) > div{
+    flex: 1 0 25%;
+    background-color: #26688b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    border-radius: 8px;
+    color: #fff;
+    margin-right: 0.4em;
+}
+
+.sect_two_form > div:nth-child(2) p {
+    flex: 1 0 70%;
+    background-color: #49D0A2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+@media screen and (max-width: 1300px) {
+    .nav1_con{
+        padding: 1em 2em;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .sect_two_form{
+        flex-wrap: wrap;
+    }
+
+    .sect_two_form > div:nth-child(1){
+        flex: 1 0 100%;
+    }
+
+    .sect_two_form > div:nth-child(2){
+        flex: 1 0 100%;
+        margin-top: 0.5em;
+    }
+
+    .sect_two_form > div:nth-child(2) > div{
+        flex: 1 0 10%;
+    }
+
+    .sect_two_form > div:nth-child(2) p {
+        flex: 1 0 85%;
+    }
+
+    .sect_two_form > div:nth-child(1) select:last-child{
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .sect_two_form > div:nth-child(1){
+        flex-direction: column;
+    }
+
+    .sect_two_form > div:nth-child(1) select{
+        width: 100%;
+        border: none;
+        outline: none;
+        margin-bottom: 0.3em;
+    }
+
+    .sect_two_form > div:nth-child(2){
+        margin-top: 0.2em;
+    }
+
+    .sect_two_form > div:nth-child(2) > div{
+        flex: 1 0 20%;
+    }
+
+    .sect_two_form > div:nth-child(2) p {
+        flex: 1 0 70%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .nav1_con{
+        padding: 1em;
+    }
+}
