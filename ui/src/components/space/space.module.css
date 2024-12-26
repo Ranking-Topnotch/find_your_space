@@ -1,0 +1,134 @@
+.sect_five_con{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+} 
+
+.sect_five_main{
+    background-color: #fff;
+    padding: 1em;
+    margin-right: 0.7em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    width: 32%;
+}
+
+.sect_five_main > img {
+    /* height: 18.75em; */
+    width: 100%;
+    border-radius: 10px;
+}
+
+.sect_five_main > div:nth-child(2) h3{
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 2em;
+}
+
+.sect_five_main > div:nth-child(2) p{
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.625;
+    margin-block: 1em;
+}
+
+.sect_five_main > div:nth-child(2) section{
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+}
+
+.sect_five_main > div:nth-child(2) section > div{
+    display: flex;
+    align-items: center;
+}
+
+.sect_five_main > div:nth-child(2) section > div p{
+    margin-left: 0.5em;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.five_icons{
+    font-size: 24px;
+}
+
+.five_amount{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.five_amount > h2{
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.five_amount > div{
+    display: flex;
+    align-items: center;
+    color: #26688b;
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid #26688b;
+    border-radius: 10px;
+    padding: 0.05em 1em;
+}
+
+.five_amount > div p{
+    font-family: "Source Sans Pro", Sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-color: #26688b;
+    color: #26688b;
+    background-color: transparent;
+    margin-right: 1em;
+}
+
+.five_icons{
+    color: #26688b;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .sect_five_main{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .five_amount{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .sect_five_main{
+        width: 100%;
+    }
+
+    .five_amount{
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    .five_amount{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .five_amount > div{
+        margin-top: 1em;
+    }
+
+}

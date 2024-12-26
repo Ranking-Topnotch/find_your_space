@@ -26,6 +26,7 @@ import { MdOutlineLocalPhone } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
 import { IoChevronForward } from "react-icons/io5";
+import Space from '../../components/space/Space';
 
 
 const HomeDetails = () => {
@@ -62,10 +63,10 @@ const HomeDetails = () => {
 
       <section className={style.detail_sect_two}>
         <div className={style.sect_two_img}>
-          <img src={Image8} alt='pics' height={100} width={200}/>
+          <img src={Image8} alt='pics' className={style.sideImage}/>
         </div>
         <div className={style.sect_two_img}>
-          <img src={Image8} alt='pics' height={100} width={200}/>
+          <img src={Image8} alt='pics' className={style.sideImage}/>
         </div>
         <div className={style.sect_two_last}>
           <IoCameraSharp />
@@ -197,7 +198,6 @@ const HomeDetails = () => {
 
 
           
-
           <section className={style.sect_three_right}>
             <div className={style.right_one}>
               <img src={Image9} alt='agent pixs' width={100}/>
@@ -293,7 +293,8 @@ const HomeDetails = () => {
         <h2>Similiar Properties</h2>
 
         <section>
-            <div className={style.sect_five_main}>
+          <Space />
+            {/* <div className={style.sect_five_main}>
                 <img src={Image8} alt='pix' />
                 <div>
                     <h3>Home in Merrick Way</h3>
@@ -328,7 +329,7 @@ const HomeDetails = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
           </section>
       </div>
     </div>
