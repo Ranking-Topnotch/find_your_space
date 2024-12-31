@@ -111,4 +111,48 @@
     color: #26688b;
 }
 
+@media screen and (max-width: 1000px){
+    .agent_con{
+        padding: 1em;
+    }
+
+    .agent_main > div:nth-child(3){
+        width: 90%;
+    }
+
+    .agent_phone{
+        flex-wrap: wrap;
+    }
+
+    .agent_phone > div{
+        margin-bottom: 0.5em;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .agent_body{
+        flex-direction: column;
+    }
+
+    .agent_body img{
+        margin-bottom: 1em;
+    }
+
+    .agent_main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .agent_phone{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .agent_phone > div{
+        margin-bottom: 0.5em;
+    }
+}
+
 
