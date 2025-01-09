@@ -49,25 +49,11 @@ const Nav = () => {
         setPageNav(false);
     }
 
-    // useEffect(() => {
-    //     if (nav) {
-    //         document.body.style.overflow = 'hidden'; 
-    //     } else {
-    //         document.body.style.overflow = 'auto'; 
-    //     }
-    //     return () => {
-    //         document.body.style.overflow = 'auto'; 
-    //     };
-    // }, [nav]);
-
     const handleDropdownToggle = () => {
         setSecondNav( prev => !prev)
     }
 
     const status = hover || secondNav
-    console.log(status)
-
-
 
   return (
     <div className={style.nav_con}>
@@ -97,7 +83,7 @@ const Nav = () => {
                     </ul>}
                 </div>
                 <li onClick={handleNavBar}>Property Single</li>
-                <li onClick={handleNavBar}>Blog</li>
+                <Link to='/blog'><li onClick={handleNavBar}>Blog</li></Link>
                 <Link to='/contact'><li onClick={handleNavBar}>Contact</li></Link>
             </ul>
         </section>

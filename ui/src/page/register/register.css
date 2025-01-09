@@ -1,0 +1,254 @@
+.registeer_con{
+    /* height: 100vh; */
+    padding: 1em 10em;
+    
+}
+
+.registeer{
+    display: flex;
+    /* justify-content: space-around;*/
+    align-items: center; 
+    margin-block-end: 1em;
+    /* position: absolute; */
+}
+
+.register_image{
+    width: 100%;
+    flex: 1 0 48%;
+}
+
+.dark{
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.register_con{
+    flex: 1 0 48%;
+    width: 100%;
+    /* height: 650px; */
+    flex-shrink: 0;
+    border-radius: 12px;
+    background-color: rgb(231, 246, 253);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 2em;
+}
+
+.register_con h3{
+    color: #D434FE;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: .5em;
+}
+
+.register_con p{
+    color: #D434FE;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.register_con h2{
+    color: #000;
+    font-family: l;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.register_con section{
+    display: flex;
+}
+
+.input_con p{
+    margin-bottom: 0.5em;
+}
+
+.input_con{
+    width: 100%;
+}
+
+.input_con input{
+    width: 97%;
+    height: 47px;
+    flex-shrink: 0;
+    color: rgba(23, 21, 21);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+    border-radius: 4px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    outline: none;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+.reviewss{
+    color: #FF26Bd;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.checked{
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.checked span{
+    color: #FFF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 1em;
+}
+
+button{
+    width: 100%;
+    height: 53px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 4px;
+    background: linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%);
+    border: none;
+    margin-top: 2em;
+    cursor: pointer;
+}
+
+.congrat_con{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.congrat{
+    width: 699px;
+    height: 664px;
+    flex-shrink: 0;
+    padding: 2rem 5rem 1rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-around;*/
+    align-items: center; 
+    margin-block-end: 1em;
+
+    border-radius: 5px;
+    border: 1px solid #D434FE;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.congrat h3{
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.congrat p{
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.congrat h5{
+    width: 574px;
+    height: 53px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    background: linear-gradient(270deg, #903AFF 0%, #D434FE 56.42%, #FF26B9 99.99%, #FE34B9 100%);
+    color: #FFF;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .registeer_con{
+        padding: 1em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .register_con h2{
+        font-size: 18px;
+    }
+
+    .register_image{
+        flex: 1 0 40%;
+    }
+
+    .register_con{
+        flex: 1 0 57%;
+    }
+    
+}
+
+@media screen and (max-width: 650px) {
+
+    .register_image{
+        display: none;
+    }
+
+    .register_con{
+        flex: 1 0 100%;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+
+    .register_con section{
+        flex-direction: column;
+    }
+
+    .input_con{
+        margin-bottom: 0.5em;
+    }
+
+    .register_con{
+        padding: 1em;
+    }
+
+    .input_con input{
+        flex: 1 0 100%;
+    }
+    
+}

@@ -11,6 +11,9 @@ import Agent from './page/agent/Agent'
 import { UseContextLink } from './context/UseContextLink'
 import { UseContextPages } from './context/UseContextPages'
 import { UseContextNav } from './context/UseContextNav'
+import Blog from './page/blog/Blog'
+import Login from './page/login/Login'
+import Register from './page/register/Register'
 
 const App = () => {
   const [ linkNav, setLinkNav ]  = useState(false)
@@ -25,6 +28,9 @@ const App = () => {
         <Route path='/homeList' element={<HomeList />} />
         <Route path='/homeList/:id' element={<HomeDetails />} />
         <Route path='/agent' element={<Agent />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/register' element={<Register />} /> 
     </Route>
   )) 
 
