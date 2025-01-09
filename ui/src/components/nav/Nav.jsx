@@ -93,7 +93,7 @@ const Nav = () => {
                 { nav === false && <FaBars className={style.navIcon} onClick={handleNavBar}/> }
                 { nav  && <MdClose className={style.navIcon} onClick={handleNavBar}/> }
             </section>}
-            <IoMdContact className={style.contact}/>
+            <Link to='/login'><IoMdContact className={style.contact}/></Link>
             { windowWidth > 650 && <p>Make an inquiry</p>}
         </section>
 

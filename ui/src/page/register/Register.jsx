@@ -25,7 +25,7 @@ const Register = () => {
         event.preventDefault()
         //submitToApi is just example
         //submitToApi()
-        setRegister(true)
+        setRegister(false)
         setTimeout(()=>{
             setRegister(false)
         }, 10000)

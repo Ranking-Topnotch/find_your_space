@@ -27,7 +27,7 @@ const Login = () => {
         event.preventDefault()
         //submitToApi is just example
         //submitToApi()
-        setRegister(true)
+        setRegister(false)
         setTimeout(()=>{
             setRegister(false)
         }, 10000)
@@ -74,22 +74,8 @@ const Login = () => {
                     </section>
 
                     <h4 className='reviewss'>Please review your registration details before submitting</h4>
-                        
-                        <div className='checked'>
-                            <input
-                                type='checkbox'
-                                id='isFriendly'
-                                //repaced the value property with the
-                                // checked property for checkbox
-                                checked={formData.isFriendly}
-                                onChange={handleChange}
-                                name='isFriendly'
-                            />
 
-                            <span>I agreed with the event terms and conditions  and privacy policy</span>
-                        </div>
-
-                        <button>Register Now</button>
+                        <button>Proceed</button>
                 </form>
             </div>
         </div>
