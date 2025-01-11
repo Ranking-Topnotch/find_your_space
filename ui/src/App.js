@@ -14,6 +14,7 @@ import { UseContextNav } from './context/UseContextNav'
 import Blog from './page/blog/Blog'
 import Login from './page/login/Login'
 import Register from './page/register/Register'
+import PostSpace from './page/postspace/PostSpace'
 
 const App = () => {
   const [ linkNav, setLinkNav ]  = useState(false)
@@ -31,6 +32,7 @@ const App = () => {
         <Route path='/blog' element={<Blog />} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register />} /> 
+        <Route path='/postspace' element={<PostSpace />} />
     </Route>
   )) 
 

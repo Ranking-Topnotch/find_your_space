@@ -94,7 +94,7 @@ const Nav = () => {
                 { nav  && <MdClose className={style.navIcon} onClick={handleNavBar}/> }
             </section>}
             <Link to='/login'><IoMdContact className={style.contact}/></Link>
-            { windowWidth > 650 && <p>Make an inquiry</p>}
+            { windowWidth > 650 && <Link to='/postspace'><p>Make an inquiry</p></Link>}
         </section>
 
     </div>
