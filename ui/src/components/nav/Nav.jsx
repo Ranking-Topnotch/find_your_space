@@ -85,6 +85,7 @@ const Nav = () => {
                 <li onClick={handleNavBar}>Property Single</li>
                 <Link to='/blog'><li onClick={handleNavBar}>Blog</li></Link>
                 <Link to='/contact'><li onClick={handleNavBar}>Contact</li></Link>
+                { windowWidth <= 640 && <Link to='/postspace'><li onClick={handleNavBar}>Post New Space</li></Link>}
             </ul>
         </section>
 
