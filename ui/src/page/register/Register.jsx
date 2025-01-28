@@ -1,36 +1,43 @@
 import React from 'react'
 import Image1 from '../../assest/3d-graphic-designer-showing-thumbs-up-png 1(1).png'
 import Image2 from '../../assest/congratulation.png'
+import Avatar from '../../assest/noavatar.png'
 import './register.css'
 import { Link } from 'react-router-dom'
 
 const Register = () => {
     const [register, setRegister] = React.useState(false)
     const [formData, setFormData] = React.useState({
-        teamName: '',
-        phone: '',
+        name: '',
+        officePhone: '',
+        homePhone: '',
         email: '',
-        projectTopic: '',
-        category: '',
-        groupSize: '',
+        companyName: '',
+        address: '',
+        password: '',
+        confirmPassword: '',
+        facebook: '',
+        x: '',
+        linkdin: '',
+        instagram: '',
+        profileImage: '',
+        agentAttestation: ''
     })
+    console.log(formData)
+    function handlePostImage(){
+
+    }
+
     function handleChange(event){
-        const {name, value, type, checked} = event.target
+        const { name, value, type, checked } = event.target
         setFormData(prevForm => ({
             ...prevForm,
             [name]: type === 'checkbox' ? checked : value
         }))
     }
-    function handleSubmit(event){
-        event.preventDefault()
-        //submitToApi is just example
-        //submitToApi()
-        setRegister(false)
-        setTimeout(()=>{
-            setRegister(false)
-        }, 10000)
-    console.log(formData)
-
+    
+    function handleSubmit(e){
+        e.preventDefault()
     }
   return (
     <div className='registeer_con'>
@@ -45,6 +52,12 @@ const Register = () => {
                 <h2><span>Aready have an account? <Link to='/login'>Sign in</Link></span></h2>
 
                 <form onSubmit={handleSubmit}>
+                    <label htmlFor='image'>
+                        <div className='imageSec'>
+                            { formData.profileImage ? <img className='blogImage' src={formData.profileImage} alt='blog' height={20} width={20} /> : <img className='blogImage' src={Avatar} alt='blog' height={20} width={20} />}
+                            <input id='image' className='imageUpload' type={'file'} placeholder="image" accept="image/*"  name="profileImage" onChange={handlePostImage} hidden/>
+                        </div>
+                    </label> 
 
                     <section>
                         <div className='input_con'>
@@ -53,19 +66,30 @@ const Register = () => {
                                 type='text'
                                 placeholder='Enter the name of your group'
                                 onChange={handleChange}
-                                name='teamName'
-                                value={formData.teamName}
+                                name='name'
+                                value={formData.name}
                             />
                         </div>
 
                         <div className='input_con'>
-                            <p>Phone</p>
+                            <p>OfficePhone</p>
                             <input 
                                 type='text'
                                 placeholder="Enter your phone number"
                                 onChange={handleChange}
-                                name='phone'
-                                value={formData.phone}
+                                name='officePhone'
+                                value={formData.officePhone}
+                            />
+                        </div>
+
+                        <div className='input_con'>
+                            <p>HomePhone</p>
+                            <input 
+                                type='text'
+                                placeholder="Enter your phone number"
+                                onChange={handleChange}
+                                name='homePhone'
+                                value={formData.homePhone}
                             />
                         </div>
 
@@ -89,10 +113,10 @@ const Register = () => {
 
                             <input
                                 type="text"
-                                placeholder="What is your group project topic"
+                                placeholder="Company name/ Agent Knowed name"
                                 onChange={handleChange}
-                                name="projectTopic"
-                                value={formData.projectTopic}
+                                name="companyName"
+                                value={formData.companyName}
                             />
                         </div>
                     </section>
@@ -105,8 +129,8 @@ const Register = () => {
                                 type="text"
                                 placeholder="Office address"
                                 onChange={handleChange}
-                                name="category"
-                                value={formData.category}
+                                name="address"
+                                value={formData.address}
                             />
                         </div>
 
@@ -115,10 +139,60 @@ const Register = () => {
 
                             <input
                                 type="text"
-                                placeholder="Enter your group size"
+                                placeholder="Enter password"
                                 onChange={handleChange}
-                                name="groupSize"
-                                value={formData.groupSize}
+                                name="password"
+                                value={formData.password}
+                            />  
+                        </div>
+
+                        <div className='input_con'>
+                            <p>Confirm Password</p>
+
+                            <input
+                                type="text"
+                                placeholder="Re-enter password"
+                                onChange={handleChange}
+                                name="confirmPassword"
+                                value={formData.confirmPassword}
+                            />  
+                        </div>
+                    </section>
+
+                    <section>
+
+                        <div className='input_con'> 
+                            <p>X Link</p>
+                            <input
+                                type="text"
+                                placeholder="Enter your x link"
+                                onChange={handleChange}
+                                name="x"
+                                value={formData.x}
+                            />
+                        </div>
+
+                        <div className='input_con'>
+                            <p>Linkldin</p>
+
+                            <input
+                                type="text"
+                                placeholder="Enter your linkldin link"
+                                onChange={handleChange}
+                                name="linkdin"
+                                value={formData.linkdin}
+                            />  
+                        </div>
+
+                        <div className='input_con'>
+                            <p>Instagram Url *</p>
+
+                            <input
+                                type="text"
+                                placeholder="Enter your instagram link"
+                                onChange={handleChange}
+                                name="instagram"
+                                value={formData.instagram}
                             />  
                         </div>
                     </section>
@@ -131,9 +205,9 @@ const Register = () => {
                                 id='isFriendly'
                                 //repaced the value property with the
                                 // checked property for checkbox
-                                checked={formData.isFriendly}
+                                checked={formData.agentAttestation}
                                 onChange={handleChange}
-                                name='isFriendly'
+                                name='agentAttestation'
                             />
 
                             <span>I agreed with the event terms and conditions  and privacy policy</span>

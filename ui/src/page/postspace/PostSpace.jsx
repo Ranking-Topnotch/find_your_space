@@ -115,6 +115,63 @@ const PostSpace = () => {
                 </div>
             </section>
 
+            <section className={style.third_sect}>
+                <div className={style.input_con}> 
+                    <p>Feature 1</p>
+                    <input
+                        type="text"
+                        placeholder="Feature 1"
+                        onChange={handleChange}
+                        name="category"
+                        value={formData.category}
+                    />
+                </div>
+
+                <div className={style.input_con}> 
+                    <p>Feature 2</p>
+                    <input
+                        type="text"
+                        placeholder="Feature 2"
+                        onChange={handleChange}
+                        name="category"
+                        value={formData.category}
+                    />
+                </div>
+
+                <div className={style.input_con}> 
+                    <p>Feature 3</p>
+                    <input
+                        type="text"
+                        placeholder="Feature 3"
+                        onChange={handleChange}
+                        name="category"
+                        value={formData.category}
+                    />
+                </div>
+
+                <div className={style.input_con}> 
+                    <p>Feature 4</p>
+                    <input
+                        type="text"
+                        placeholder="Feature 4"
+                        onChange={handleChange}
+                        name="category"
+                        value={formData.category}
+                    />
+                </div>
+
+                <div className={style.input_con}> 
+                    <p>Feature 5</p>
+                    <input
+                        type="text"
+                        placeholder="Feature 5"
+                        onChange={handleChange}
+                        name="category"
+                        value={formData.category}
+                    />
+                </div>
+            </section>
+
             <section className={style.fourth_sect}>
                 <div className={style.input_con}>
                     <p>Description</p>
