@@ -21,8 +21,8 @@ module.exports = {
             profileImage,
             agentAttestation
         } = req.body
-
-        if(!name || !officePhone || !email || !companyName || !address || !password || !agentAttestation ) {
+        
+        if(!name || !officePhone || !email || !companyName || !address || !password || !confirmPassword || !agentAttestation ) {
             return res.status(404).json({ message:  'All field are mandatory'})
         }
 
@@ -42,7 +42,7 @@ module.exports = {
 
             const salt = await bcrypt.genSalt(10)
             const hashPassword = await bcrypt.hash(password, salt);
-
+            
             await db.query(
                 'INSERT INTO agent ( name, officePhone, homePhone, email, companyName, address, password, facebook, x, linkdin, instagram, profileImage, agentAttestation ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 [ name, officePhone, homePhone, email, companyName, address, hashPassword, facebook, x, linkdin, instagram, profileImage, agentAttestation ]
@@ -67,8 +67,9 @@ module.exports = {
                 'SELECT * FROM agent WHERE email = ?',
                 [ email ]
             )
+            console.log(agentDetail)
 
-            if(agentDetail[0].length == 0){
+            if(agentDetail[0].length === 0){
                 return res.status(404).json({ message: "Incorrect email address"})
             }
 

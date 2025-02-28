@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image1 from '../../assest/3d-graphic-designer-showing-thumbs-up-png 1(1).png'
 import Image2 from '../../assest/congratulation.png'
 
@@ -7,14 +7,10 @@ import './login.css'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
-    const [register, setRegister] = React.useState(false)
-    const [formData, setFormData] = React.useState({
-        teamName: '',
-        phone: '',
+    const [register, setRegister] = useState(false)
+    const [formData, setFormData] = useState({
         email: '',
-        projectTopic: '',
-        category: '',
-        groupSize: '',
+        password: ''  
     })
     function handleChange(event){
         const {name, value, type, checked} = event.target
@@ -23,16 +19,20 @@ const Login = () => {
             [name]: type === 'checkbox' ? checked : value
         }))
     }
-    function handleSubmit(event){
-        event.preventDefault()
-        //submitToApi is just example
-        //submitToApi()
-        setRegister(false)
-        setTimeout(()=>{
-            setRegister(false)
-        }, 10000)
-    console.log(formData)
+   
+    const handleAgentSubmit = async (e) => {
+        e.preventDefault()
 
+        const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/agentlogin`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+    
+        const resData = await fetchData.json()
+        console.log(resData)
     }
   return (
     <div className='registeer_con'>
@@ -46,7 +46,7 @@ const Login = () => {
                 <h2>Create an Account </h2>
                 <h2><span>Don't have an account? <Link to='/register'>Sign up</Link></span></h2>
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleAgentSubmit}>
 
                     <section>
                         <div className='input_con'>
@@ -55,8 +55,8 @@ const Login = () => {
                                 type='email'
                                 placeholder='Enter your email'
                                 onChange={handleChange}
-                                name='teamName'
-                                value={formData.teamName}
+                                name='email'
+                                value={formData.email}
                             />
                         </div>
 
@@ -66,16 +66,14 @@ const Login = () => {
                                 type='text'
                                 placeholder="Enter your phone number"
                                 onChange={handleChange}
-                                name='phone'
-                                value={formData.phone}
+                                name='password'
+                                value={formData.password}
                             />
                         </div>
 
                     </section>
 
-                    <h4 className='reviewss'>Please review your registration details before submitting</h4>
-
-                        <button>Proceed</button>
+                    <button>Proceed</button>
                 </form>
             </div>
         </div>
