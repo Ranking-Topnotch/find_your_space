@@ -5,4 +5,5 @@ router.post('/signup', agentController.agentSignUp )
 
 router.post('/agentlogin', agentController.agentLogin )
 
+router.post('/api/auth/logout', agentController.agentLogout)
 module.exports = router

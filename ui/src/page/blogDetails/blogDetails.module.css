@@ -1,0 +1,231 @@
+.blogCon{
+    padding: 1em 10em;
+    display: flex;
+    flex-direction: row;
+}
+
+.blog_first{
+    flex: 1% 0 65%;
+    margin-right: 2em;
+} 
+
+.blog_first h1{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.blog_first p{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2em;
+}
+
+.blog_firstSect{
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.blog_firstSect > div:nth-child(1){
+    position: relative;
+}
+
+.blog_firstSect img{
+    width: 100%;
+    border-radius: 15px;
+} 
+
+.firstSect_agent{
+    position: absolute;
+    display: flex;
+    align-content: center;
+    bottom: .1em;
+    left: 2em;
+}
+
+.firstSect_agent 
+
+.avatar{
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5em;
+    color: #fff;
+}
+
+.firstSect_time{
+    display: flex;
+    margin-top: 1em;
+    padding-left: 2em;
+}
+
+.firstTime_avatar{
+    margin-right: 0.5em;
+}
+
+.firstSect_time p{
+    margin-right: 0.5em;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.firstSect_time p:nth-child(3){
+    color: #26688b;   
+}
+
+.firstContent {
+    padding: 0 2em;
+}
+
+.firstContent h2 {
+    margin-bottom: 1em;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.firstContent p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.625;
+}
+
+/**--------SECOND SECTION ****/
+.blog_second{
+    flex: 1% 0 35%;
+} 
+
+.second_first h2{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5em;
+}
+
+.second_first h3{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 1.625;
+    display: flex;
+    align-items: start;
+}
+
+.second_first h3 span{
+    margin-right: 0.5em;
+}
+
+.second_agent > h3{
+    margin-bottom: 1.5em;
+    margin-top: 3em;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.agent{
+    display: flex;
+    align-items: center;
+}
+
+.agent > img {
+    border-radius: 15px;
+    width: 130px;
+    height: 150px;
+    margin-right: 1em;
+}
+
+.agent > div > div{
+    display: flex;
+    margin-bottom: .8em;
+}
+
+.agent > div h2{
+    font-size: 24px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: .8em;
+}
+
+.agent > div > div p{
+    margin-left: 0.5em;
+}
+
+.property > h2{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.property > div p {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 0.8em;
+}
+
+.social_con{
+    display: flex;
+    margin-top: 1em; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.social_con div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    font-size: 13px;
+    line-height: 1;
+}
+
+
+@media screen and (max-width: 1200px){
+    .blogCon{
+        padding: 1em;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .blogCon{
+        flex-direction: column;
+    }
+
+    .blog_first{
+        margin-right: 0;
+    } 
+
+    .blog_second{
+        margin-top: 2em;   
+    }
+}
+
+@media screen and (max-width: 500px){
+    .second_first h3{
+        font-size: 15px;
+    }
+
+    .agent{
+        flex-direction: column;
+    }
+
+    .firstContent h2 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .agent{
+        flex-direction: column;
+    }
+
+    
+}
+
+

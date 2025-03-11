@@ -86,16 +86,22 @@ module.exports = {
             )
 
             // Set the token in an HTTP-only cookie
-            // res.cookie('token', token, {
-            //     httpOnly: true,
-            //     secure: process.env.NODE_ENV === 'production', 
-            //     sameSite: 'lax', 
-            //     maxAge: 24 * 60 * 60 * 1000, 
-            // });
+            res.cookie('token', accessToken, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production', 
+                sameSite: 'lax', 
+                maxAge: 24 * 60 * 60 * 1000, 
+            });
            
-            return res.status(200).json({ agent: agentDetail[0], accessToken,  message: "Login successful"})
+            return res.status(200).json({ agent: agentDetail[0][0], message: "Login successful"})
         }catch(err){
 
         }
+    },
+
+    agentLogout: (req, res) => {
+        res.clearCookie("token", { httpOnly: true, secure: true, sameSite: "Strict" });
+        res.status(200).json({ message: "Logged out successfully" });
     }
+    
 }

@@ -93,6 +93,35 @@ ul > div {
     display: none;
 }
 
+.usersection{
+    position: fixed;
+    width: 15em;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #26688b;
+    height: 100vh;
+    z-index: 9;
+}
+
+.usersection_details{
+    color: #fff;
+    padding: 1em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.usersection_details:hover {
+    color:  #6EC1E4;
+}
+
+.usersection div div{
+    background-color:  #FFF;
+    height: 2px;
+}
+
+
 
 @media screen and (max-width: 1200px) {
     /* .nav_con section:nth-child(4) p{

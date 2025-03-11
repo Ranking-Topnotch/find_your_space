@@ -3,16 +3,17 @@ const db = require('../dbConnection')
 
 module.exports = {
     postBlog: async ( req, res ) => {
-        const {  image, title, body1, title2, body2, title3, body3, agent_id } = req.body
+        console.log(req.body)
+        const {  blogImage, title, body1, title2, body2, agent_id } = req.body
 
-        if( !image || !title || !body1 || !agent_id ){
+        if( !blogImage || !title || !body1 || !agent_id ){
             return res.status(404).json({ message:  'All field are mandatory'})
         }
 
         try{
             await db.query(
-                'INSERT INTO blog ( image, title, body1, title2, body2, title3, body3, agent_id ) VALUE ( ?, ?, ?, ?, ?, ?, ?, ? )',
-                [ image, title, body1, title2, body2, title3, body3, agent_id ]
+                'INSERT INTO blog ( image, title, body1, title2, body2, agent_id ) VALUE ( ?, ?, ?, ?, ?, ? )',
+                [ blogImage, title, body1, title2, body2, agent_id ]
             )
 
             return res.status(201).json({ message:  'Blog posted successfully'})

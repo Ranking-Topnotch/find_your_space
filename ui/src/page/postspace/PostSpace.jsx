@@ -8,6 +8,7 @@ const PostSpace = () => {
     const [formData, setFormData] = useState({
         agent_id: 2,                    
         spaceType: '',
+        status: '',
         address: '',
         rentAmount: '',
         bedroomNo: '',
@@ -111,6 +112,7 @@ const PostSpace = () => {
     
         const requiredFields = [
             { key: "spaceType", label: "Space Type" },
+            { key: "status", label: "status" },
             { key: "address", label: "Address" },
             { key: "rentAmount", label: "Rent Amount" },
             { key: "bedroomNo", label: "Number of Bedrooms" },
@@ -123,50 +125,45 @@ const PostSpace = () => {
             { key: "houseImg2", label: "House Image 2" },
             { key: "houseImg3", label: "House Image 3" },
         ];
-        console.log(requiredFields)
     
-        // Find missing fields
         const missingFields = requiredFields.filter(field => !formData[field.key]);
-        console.log(missingFields)
     
         if (missingFields.length > 0) {
-            console.log(missingFields.length)
-            console.log("Missing Fields:", missingFields.map(field => field.label));
             missingFields.forEach(field => {
                 toast.error(`${field.label} is required!`, { position: "top-right" });
-            });    
-    
+            });
             return;
         }
 
-        const imagesToUpload = [formData.houseImg1, formData.houseImg2, formData.houseImg3].filter(img => img);  
-        console.log(imagesToUpload)
-        const imgUrls = await uploadImages(imagesToUpload);  // Upload all images
-        console.log(imgUrls)
-    
-        
-        setFormData((prev) => ({
-            ...prev,
-            houseImg1: imgUrls[0],
-            houseImg2: imgUrls[1],
-            houseImg3: imgUrls[2],
-        }));
-        
+        const imagesToUpload = [formData.houseImg1, formData.houseImg2, formData.houseImg3].filter(img => img);
+        const imgUrls = await uploadImages(imagesToUpload);
 
-        
-        console.log(formData);
+        const updatedFormData = {
+            ...formData,
+            houseImg1: imgUrls[0] || "",
+            houseImg2: imgUrls[1] || "",
+            houseImg3: imgUrls[2] || "",
+        };
     
-        const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/space/postspace`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData) // Send image URLs to backend
-        });
+        try {
+            const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/space/postspace`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(updatedFormData) // Use updated data directly
+            });
     
-        const resData = await fetchData.json();
-        console.log(resData);
+            const resData = await fetchData.json();
+            console.log("Server Response:", resData);
+            toast.success("Space submitted successfully!", { position: "top-right" });
+    
+        } catch (error) {
+            console.error("Error submitting space:", error);
+            toast.error("Submission failed. Please try again.", { position: "top-right" });
+        }
     };
+    
 
   return (
     <div className={style.post_con}>
@@ -187,7 +184,7 @@ const PostSpace = () => {
                 </div>
                 <div className={style.input_con}>
                     <p>For Sale/Rent *</p>
-                    <select name="spaceType" value={formData.spaceType} onChange={handleChange}>
+                    <select name="status" value={formData.status} onChange={handleChange}>
                         <option value="Select an option">Select an option</option>
                         <option value="For Sale">For Sale</option>
                         <option value="For Rent">For Rent</option>

@@ -6,6 +6,7 @@ module.exports = {
         console.log(req.body)
         const { 
             agent_id,
+            status,
             houseImg1, 
             houseImg2, 
             houseImg3,
@@ -16,7 +17,6 @@ module.exports = {
             bathroomNo,
             garageNo,
             area,
-            status,
             spaceDesc,
             feature1,
             feature2,
@@ -26,7 +26,7 @@ module.exports = {
         } = req.body
         
         
-        if( !agent_id || !houseImg1 || !houseImg2 || !houseImg3 || !spaceType || !rentAmount || !address || !bedroomNo  || !bathroomNo || !spaceDesc || !feature1 || !feature2 ){
+        if( !agent_id || !status || !houseImg1 || !houseImg2 || !houseImg3 || !spaceType || !rentAmount || !address || !bedroomNo  || !bathroomNo || !spaceDesc || !feature1 || !feature2 ){
             return res.status(404).json({ message: 'All field are mandatory'})
         }
 

@@ -4,23 +4,31 @@ import { IoMdContact } from "react-icons/io";
 import { MdClose } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
 import style from './nav.module.css'
-import { Link } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
 import { UseContextLink } from '../../context/UseContextLink';
 import { UseContextPages } from '../../context/UseContextPages';
 import { UseContextNav } from '../../context/UseContextNav';
+import { UseContextNavHome } from '../../context/UseContextNavHome';
+import { UserContext } from '../../context/UserContext';
+import { UseIsAuthenticated } from '../../context/UseIsAuthenticated';
+
 
 
 const Nav = () => {
+    
     const [ hover, setHover ] = useState(false)
     const { nav, setNav }  = useContext(UseContextNav)
     const { linkNav, setLinkNav }  = useContext(UseContextLink)
     const { pageNav, setPageNav }  = useContext(UseContextPages)
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const { navHome, setNavHome }  = useContext(UseContextNavHome)
+    const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
     const [ secondNav, setSecondNav ] = useState(false)
     const navRef = useRef(null);
+    const { logout } = useContext(UserContext)
+    const { isAuthenticated } = useContext(UseIsAuthenticated)
 
     useEffect(() => {
         const handleResize = () => {
@@ -42,15 +50,19 @@ const Nav = () => {
         setHover(false);
     };
 
-
     const handleNavBar = () => {
         setNav(!nav);
         setLinkNav(false); // Reset the other two
         setPageNav(false);
+        setNavHome(false);
     }
 
     const handleDropdownToggle = () => {
         setSecondNav( prev => !prev)
+    }
+
+    const handleNavToggle = () => {
+        setNavHome( prev => !prev)
     }
 
     const status = hover || secondNav
@@ -94,9 +106,19 @@ const Nav = () => {
                 { nav === false && <FaBars className={style.navIcon} onClick={handleNavBar}/> }
                 { nav  && <MdClose className={style.navIcon} onClick={handleNavBar}/> }
             </section>}
-            <Link to='/login'><IoMdContact className={style.contact}/></Link>
-            { windowWidth > 650 && <Link to='/postspace'><p>Make an inquiry</p></Link>}
+            <Link to={ isAuthenticated ? '' : '/login'}><IoMdContact onClick={handleNavToggle} className={style.contact}/></Link>
+            { windowWidth > 650 && <Link to='/contact'><p>Make an inquiry</p></Link>}
         </section>
+
+        { (navHome && isAuthenticated ) && <section className={style.usersection}>
+            <div>
+                <Link to='/postblog'><p className={style.usersection_details} onClick={handleNavBar}>Post a blog</p></Link>
+                <div></div>
+                <Link to='/postspace'><p className={style.usersection_details} onClick={handleNavToggle}>Post a Space</p></Link>
+                <div></div>
+                <p onClick={handleNavToggle}><p className={style.usersection_details} onClick={logout}>Logout</p></p>
+            </div>
+        </section>}
 
     </div>
   )

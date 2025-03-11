@@ -1,17 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Image1 from '../../assest/3d-graphic-designer-showing-thumbs-up-png 1(1).png'
-import Image2 from '../../assest/congratulation.png'
-
-
 import './login.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { UserContext } from '../../context/UserContext'
 
 const Login = () => {
     const [register, setRegister] = useState(false)
+    const { login } = useContext(UserContext);
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         email: '',
         password: ''  
     })
+
     function handleChange(event){
         const {name, value, type, checked} = event.target
         setFormData(prevForm => ({
@@ -21,19 +22,15 @@ const Login = () => {
     }
    
     const handleAgentSubmit = async (e) => {
-        e.preventDefault()
-
-        const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/agentlogin`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        });
+        e.preventDefault();
+        try {
+            await login(formData.email, formData.password);
+            navigate("/postspace"); // Redirect after login
+        } catch (error) {
+            console.error(error.message);
+        }
+    };
     
-        const resData = await fetchData.json()
-        console.log(resData)
-    }
   return (
     <div className='registeer_con'>
         <div className={register ? 'registeer dark' : 'registeer'}>
