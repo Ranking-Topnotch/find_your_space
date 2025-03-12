@@ -95,7 +95,7 @@ module.exports = {
            
             return res.status(200).json({ agent: agentDetail[0][0], message: "Login successful"})
         }catch(err){
-
+            return res.status(500).json({ message: err.message})
         }
     },
 

@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import RealEstateLogo from '../../assest/images.png'
 import { IoMdContact } from "react-icons/io";
 import { MdClose } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
 import style from './nav.module.css'
-import { Link, useOutletContext } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
 import { IoChevronBackOutline } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
@@ -21,12 +21,11 @@ const Nav = () => {
     
     const [ hover, setHover ] = useState(false)
     const { nav, setNav }  = useContext(UseContextNav)
-    const { linkNav, setLinkNav }  = useContext(UseContextLink)
-    const { pageNav, setPageNav }  = useContext(UseContextPages)
+    const { setLinkNav }  = useContext(UseContextLink)
+    const { setPageNav }  = useContext(UseContextPages)
     const { navHome, setNavHome }  = useContext(UseContextNavHome)
     const [ windowWidth, setWindowWidth ] = useState(window.innerWidth);
     const [ secondNav, setSecondNav ] = useState(false)
-    const navRef = useRef(null);
     const { logout } = useContext(UserContext)
     const { isAuthenticated } = useContext(UseIsAuthenticated)
 
