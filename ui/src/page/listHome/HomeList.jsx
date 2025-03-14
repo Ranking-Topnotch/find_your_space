@@ -1,13 +1,9 @@
 import React from 'react'
 import style from './homeList.module.css'
 import Image8 from '../../assest/property1-680x510.jpg'
-import { CiLocationOn } from "react-icons/ci";
 import { IoIosBed } from "react-icons/io";
 import { FaShower } from "react-icons/fa6";
 import { FaVectorSquare } from "react-icons/fa";
-import { FcLike } from "react-icons/fc";
-import { FaCamera } from "react-icons/fa6";
-import { BsPersonVideo2 } from "react-icons/bs";
 import { IoChevronForward } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 

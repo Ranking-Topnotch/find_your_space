@@ -111,13 +111,13 @@ const Home = () => {
 
             <div className={style.sect_three_img}>
                 <div>
-                    <img src={Image1} alt='pix' />
-                    <img src={Image3} alt='pix' />
+                    <img src={Image1} alt='Real estate' />
+                    <img src={Image3} alt='Real estate' />
                 </div>
 
                 <div>
-                    <img src={Image2} alt='pix' />
-                    <img src={Image4} alt='pix' className={style.img}  />
+                    <img src={Image2} alt='house for rent and sale' />
+                    <img src={Image4} alt='house for sale' className={style.img}  />
                 </div>
             </div>
         </section>
@@ -125,9 +125,9 @@ const Home = () => {
         <section className={style.sect_four}>
             <h3>Trusted by <span>2000+</span> busineses</h3>
             <div>
-                <img src={Image5} alt='pix' />
-                <img src={Image6} alt='pix' />
-                <img src={Image7} alt='pix' />
+                <img src={Image5} alt='Real estate' />
+                <img src={Image6} alt='Real estate' />
+                <img src={Image7} alt='Real estate' />
             </div>
         </section>
 
@@ -143,7 +143,7 @@ const Home = () => {
 
             <div>
                 <div className={style.sect_five_main}>
-                    <img src={Image8} alt='pix' />
+                    <img src={Image8} alt='Real estate' />
                     <div>
                         <h3>Home in Merrick Way</h3>
                         <p>Merrick Way, Miami, FL 33134, USA</p>
@@ -180,7 +180,7 @@ const Home = () => {
                 </div>
 
                 <div className={style.sect_five_main}  >
-                    <img src={Image8} alt='pix' />
+                    <img src={Image8} alt='Real estate' />
                     <div>
                         <h3>Home in Merrick Way</h3>
                         <p>Merrick Way, Miami, FL 33134, USA</p>
@@ -404,7 +404,7 @@ const Home = () => {
         </section>
 
         <section className={style.sect_nine}>
-            <img src={Image10} alt='picx' width={500} height={600} />
+            <img src={Image10} alt='Real estate' width={500} height={600} />
 
             <div className={style.sect_nine_main}>
                 <h2>Are you looking for a dream home?</h2>

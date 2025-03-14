@@ -20,7 +20,7 @@ const Blog = () => {
                 <div>
                     <img src={Image1} alt='find a place to live'/>
                     <div className={style.firstSect_agent}>
-                        <img src={Image2} alt='profile image' className={style.avatar}/>
+                        <img src={Image2} alt='profile of agent' className={style.avatar}/>
                         <p>John Doe</p>
                     </div>
                 </div>

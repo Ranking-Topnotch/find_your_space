@@ -4,7 +4,6 @@ import { ImageUtility } from '../../utility/ImageUtility'
 import {  toast } from 'react-toastify';
 
 const PostBlog = () => {
-    const [register, setRegister] = useState(false)
     const [formData, setFormData] = useState({
         agent_id: 2, 
         title: '',
@@ -15,7 +14,6 @@ const PostBlog = () => {
         img: '',
         verifyInfo: Boolean
     })
-    console.log(formData)
 
     const handleBlogImage = async(e) => {
             const data = await ImageUtility(e.target.files[0])
@@ -168,7 +166,7 @@ const PostBlog = () => {
                 <div className={style.imageSec_one}>
                     <label htmlFor='blogImage' >
                         <div >
-                            { formData.blogImage ? <img className={style.blogImage} src={formData.blogImage} alt='blog' height={20} width={20} /> : <div>Upload image</div> }
+                            { formData.blogImage ? <img className={style.blogImage} src={formData.blogImage} alt='house blog' height={20} width={20} /> : <div>Upload image</div> }
                             <input id='blogImage' className={style.imageUpload} type={'file'} placeholder="Upload image1" accept="image/*"  name="blogImage" onChange={handleBlogImage} hidden/>
                         </div>
                     </label>

@@ -35,7 +35,7 @@ const HomeDetails = () => {
       <section className={style.detail_sect_one}>
         <div className={style.headerImage}>
           <div className={style.one_icon1}><IoCaretBack /></div>
-          <img src={Image8} alt='Home finder house pixs' className={style.backImage} />
+          <img src={Image8} alt='Home finder house' className={style.backImage} />
           <div className={style.one_icon1}><IoCaretForwardOutline /></div>
         </div>
         <div className={style.sect_one}>
@@ -63,10 +63,10 @@ const HomeDetails = () => {
 
       <section className={style.detail_sect_two}>
         <div className={style.sect_two_img}>
-          <img src={Image8} alt='pics' className={style.sideImage}/>
+          <img src={Image8} alt='lounge' className={style.sideImage}/>
         </div>
         <div className={style.sect_two_img}>
-          <img src={Image8} alt='pics' className={style.sideImage}/>
+          <img src={Image8} alt='lounge' className={style.sideImage}/>
         </div>
         <div className={style.sect_two_last}>
           <IoCameraSharp />
@@ -294,43 +294,7 @@ const HomeDetails = () => {
 
         <section>
           <Space />
-            {/* <div className={style.sect_five_main}>
-                <img src={Image8} alt='pix' />
-                <div>
-                    <h3>Home in Merrick Way</h3>
-                    <p>Merrick Way, Miami, FL 33134, USA</p>
-
-                    <section>
-                        <div>
-                            <IoIosBed className={style.five_icons}/>
-                            <p>3</p>
-                        </div>
-
-                        <div></div>
-                        
-                        <div>
-                            <FaShower className={style.five_icons}/>
-                            <p>3</p>
-                        </div>
-
-                        <div></div>
-
-                        <div>
-                            <FaVectorSquare className={style.five_icons}/>
-                            <p>4500</p>
-                        </div>
-                    </section>
-
-                    <div className={style.five_amount}>
-                        <h2>$540,000</h2>
-                        <div>
-                            <Link to='/homeList/:id'><p>View Details </p></Link>
-                            <IoChevronForward />
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-          </section>
+        </section>
       </div>
     </div>
   )

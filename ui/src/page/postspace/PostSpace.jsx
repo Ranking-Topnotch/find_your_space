@@ -4,7 +4,6 @@ import { ImageUtility } from '../../utility/ImageUtility'
 import {  toast } from 'react-toastify';
 
 const PostSpace = () => {
-    const [register, setRegister] = useState(false)
     const [formData, setFormData] = useState({
         agent_id: 2,                    
         spaceType: '',
@@ -33,7 +32,6 @@ const PostSpace = () => {
     
         try {
             const data = await ImageUtility(files[0]); // Now properly waits for the data
-            console.log(`Processed Image for ${name}:`, data);
     
             setFormData((prev) => ({
                 ...prev,
@@ -70,33 +68,6 @@ const PostSpace = () => {
     
         return uploadedUrls;
     };
-    
-    
-    // const uploadImages = async (images) => {
-    //     let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
-    //     let api = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
-    
-    //     try {
-    //         const uploadPromises = images.map(async (image) => {
-    //             let data = new FormData();
-    //             data.append("file", image);
-    //             data.append("upload_preset", "images_preset");  
-            
-    //             const fetchData = await fetch(api, {
-    //                 method: "POST",
-    //                 body: data
-    //             });
-    
-    //             const res = await fetchData.json();
-    //             return res.secure_url;  // Return Cloudinary URL
-    //         });
-    
-    //         return await Promise.all(uploadPromises); // Wait for all uploads to complete
-    //     } catch (err) {
-    //         console.log("Upload Error:", err);
-    //         return [];
-    //     }
-    // };
 
     function handleChange(event){
         const {name, value, type, checked} = event.target
@@ -155,7 +126,6 @@ const PostSpace = () => {
             });
     
             const resData = await fetchData.json();
-            console.log("Server Response:", resData);
             toast.success("Space submitted successfully!", { position: "top-right" });
     
         } catch (error) {

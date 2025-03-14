@@ -24,7 +24,7 @@ const BlogDetails = () => {
                 <div>
                     <img src={Image1} alt='find a place to live'/>
                     <div className={style.firstSect_agent}>
-                        <img src={Image2} alt='profile image' className={style.avatar}/>
+                        <img src={Image2} alt='profile of house agent' className={style.avatar}/>
                         <p>John Doe</p>
                     </div>
                 </div>
@@ -85,7 +85,7 @@ const BlogDetails = () => {
             <div className={style.second_agent}>
                 <h3>Agent</h3>
                 <div className={style.agent}>
-                    <img src={Image9} alt="Agent" />
+                    <img src={Image9} alt="Agent of space" />
                     <div>
                         <h2>Luke Emmanuel</h2>
                         <div>
