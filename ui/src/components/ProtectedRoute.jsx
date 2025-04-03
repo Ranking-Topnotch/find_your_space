@@ -32,7 +32,7 @@ const ProtectedRoute = () => {
         const interval = setInterval(checkAuth, 3600000);
 
         return () => clearInterval(interval); 
-    }, [ isAuthenticated ]);
+    });
 
     if (isLoading) return <p>Loading...</p>; 
 
