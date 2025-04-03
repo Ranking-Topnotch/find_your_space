@@ -36,7 +36,7 @@ const PostBlog = () => {
     
         try{
             let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
-            let resourceType = type === 'image' ? formData.img : 'video';
+            //let resourceType = type === 'image' ? formData.img : 'video';
             let api = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
         
             const fetchData = await fetch(api, {

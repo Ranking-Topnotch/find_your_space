@@ -1,6 +1,5 @@
 import React from 'react'
 import Image1 from '../../assest/3d-graphic-designer-showing-thumbs-up-png 1(1).png'
-import Image2 from '../../assest/congratulation.png'
 import { ImageUtility } from '../../utility/ImageUtility'
 import Avatar from '../../assest/noavatar.png'
 import './register.css'
@@ -46,7 +45,7 @@ const Register = () => {
     
         try{
             let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
-            let resourceType = type === 'image' ? formData.img : 'video';
+            //let resourceType = type === 'image' ? formData.img : 'video';
             let api = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
         
             const fetchData = await fetch(api, {

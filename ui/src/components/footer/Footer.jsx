@@ -17,7 +17,7 @@ import { UseContextNav } from '../../context/UseContextNav';
 const Footer = ({ width }) => {
    const { linkNav, setLinkNav }  = useContext(UseContextLink)
    const { pageNav, setPageNav }  = useContext(UseContextPages)
-   const { nav, setNav }  = useContext(UseContextNav)
+   const { setNav }  = useContext(UseContextNav)
 
     const toggleLinkNav = () => {
         setLinkNav(!linkNav);
