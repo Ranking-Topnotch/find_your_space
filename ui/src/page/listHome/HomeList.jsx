@@ -139,7 +139,7 @@ const HomeList = () => {
                 </div>
 
                 <div className={style.sect_five_main}>
-                    <img src={Image8} alt='pix' />
+                    <img src={Image8} alt='House in Lagos' />
                     <div>
                         <h3>Home in Merrick Way</h3>
                         <p>Merrick Way, Miami, FL 33134, USA</p>

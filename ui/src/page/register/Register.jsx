@@ -4,9 +4,11 @@ import Image2 from '../../assest/congratulation.png'
 import { ImageUtility } from '../../utility/ImageUtility'
 import Avatar from '../../assest/noavatar.png'
 import './register.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const Register = () => {
+    const navigate =  useNavigate()
     const [register, setRegister] = React.useState(false)
     const [formData, setFormData] = React.useState({
         name: '',
@@ -86,6 +88,14 @@ const Register = () => {
         });
     
         const resData = await fetchData.json()
+
+        if(resData.message === "Space submitted successfully!"){
+            toast.success("Space submitted successfully!", { position: "top-right" });
+            
+            navigate('/blog')
+        }else{
+            toast.error(resData.message, { position: "top-right"})
+        }
     }
   return (
     <div className='registeer_con'>

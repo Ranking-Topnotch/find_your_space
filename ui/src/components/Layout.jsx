@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import { Outlet } from 'react-router-dom'
 import Header from './header/Header';
 import Nav1 from './nav1/Nav1';

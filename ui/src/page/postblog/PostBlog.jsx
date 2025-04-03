@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import style from './postblog.module.css'
 import { ImageUtility } from '../../utility/ImageUtility'
 import {  toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom"
 
 const PostBlog = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         agent_id: 2, 
         title: '',
@@ -16,38 +18,38 @@ const PostBlog = () => {
     })
 
     const handleBlogImage = async(e) => {
-            const data = await ImageUtility(e.target.files[0])
-    
-            setFormData((prev) => {
-                return{
-                    ...prev,
-                    blogImage: data,
-                    img: e.target.files[0]
-                }
-            })
-        }
-    
-        const uploadImage = async (type) => {
-            let data = new FormData()
-            data.append("file", type === 'image' ? formData.img : '')
-            data.append("upload_preset", type === 'image' ? 'images_preset' : '')  
-        
-            try{
-                let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
-                let resourceType = type === 'image' ? formData.img : 'video';
-                let api = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
-            
-                const fetchData = await fetch(api, {
-                    method: "POST",
-                    body: data
-                })
-    
-                const res = await fetchData.json()
-                return res.secure_url
-            }catch(err){
-                console.log(err)
+        const data = await ImageUtility(e.target.files[0])
+
+        setFormData((prev) => {
+            return{
+                ...prev,
+                blogImage: data,
+                img: e.target.files[0]
             }
+        })
+    }
+    
+    const uploadImage = async (type) => {
+        let data = new FormData()
+        data.append("file", type === 'image' ? formData.img : '')
+        data.append("upload_preset", type === 'image' ? 'images_preset' : '')  
+    
+        try{
+            let cloudName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
+            let resourceType = type === 'image' ? formData.img : 'video';
+            let api = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
+        
+            const fetchData = await fetch(api, {
+                method: "POST",
+                body: data
+            })
+
+            const res = await fetchData.json()
+            return res.secure_url
+        }catch(err){
+            console.log(err)
         }
+    }
     
     function handleChange(event){
         const {name, value, type, checked} = event.target
@@ -94,6 +96,13 @@ const PostBlog = () => {
             });
 
             const resData = await fetchData.json()
+
+            if(resData.message === "Blog posted successfully"){
+                toast(<p className={style.alert}>{resData.message}</p>)
+                navigate('/blog')
+            }else{
+                toast(<p className={style.alert}>{resData.message}</p>) 
+            }
         }catch(error){
             console.error("Error submitting space:", error);
             toast.error("Submission failed. Please try again.", { position: "top-right" });

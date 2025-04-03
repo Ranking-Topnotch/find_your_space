@@ -1,7 +1,6 @@
 import React from 'react'
 import Image1 from '../../assest/resturant-interrior-1-1.jpg'
 import Image9 from '../../assest/IMG-20240621-WA0096.jpg'
-import { RxAvatar } from "react-icons/rx";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { MdCall } from "react-icons/md";
 import { GoDash } from "react-icons/go";

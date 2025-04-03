@@ -15,7 +15,7 @@ const Contact = () => {
     e.preventDefault()
     const { name, value } = e.target
     const nume = value.split(/\s+/)
-    console.log(nume)
+    
     //console.log(e.target.value.split(/\s+/).words.length)
     setLogin((prev) => {
       if(nume.length >  4){

@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import style from './postSpace.module.css'
 import { ImageUtility } from '../../utility/ImageUtility'
 import {  toast } from 'react-toastify';
+import { useNavigate } from 'react-router';
 
 const PostSpace = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         agent_id: 2,                    
         spaceType: '',
@@ -126,7 +128,13 @@ const PostSpace = () => {
             });
     
             const resData = await fetchData.json();
-            toast.success("Space submitted successfully!", { position: "top-right" });
+            if(resData.message === "Space submitted successfully!"){
+                toast.success("Space submitted successfully!", { position: "top-right" });
+                
+                navigate('/blog')
+            }else{
+                toast.error(resData.message, { position: "top-right"})
+            }
     
         } catch (error) {
             console.error("Error submitting space:", error);

@@ -25,7 +25,6 @@ import { FiMessageSquare } from "react-icons/fi";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { MdAccountCircle } from "react-icons/md";
 import { MdOutlineEmail } from "react-icons/md";
-import { IoChevronForward } from "react-icons/io5";
 import Space from '../../components/space/Space';
 
 
@@ -200,7 +199,7 @@ const HomeDetails = () => {
           
           <section className={style.sect_three_right}>
             <div className={style.right_one}>
-              <img src={Image9} alt='agent pixs' width={100}/>
+              <img src={Image9} alt='House Agent' width={100}/>
               <div>
                 <h4>Agent</h4>
                 <h3>Luke Emmanuel <span><IoIosCheckmark /></span></h3> 
